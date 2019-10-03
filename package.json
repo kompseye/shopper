@@ -1,0 +1,39 @@
+{
+  "name": "shopper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint *.js ",
+    "format": "prettier --write *.js",
+    "start": "nodemon -e js,mjs,json,ejs index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kompseye/shopper.git"
+  },
+  "author": "kompseye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kompseye/shopper/issues"
+  },
+  "homepage": "https://github.com/kompseye/shopper#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.8",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
+  }
+}
