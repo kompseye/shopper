@@ -44,14 +44,17 @@
 <!-- shopping list -->
 <div class="container">
     <h2>Shopping List</h2>
-    <div class="shoppingGrandTotal">
-    </div>
+    <h3>
+      <div>
+        <font color="green" class="shoppingGrandTotal"></font>
+      </div>
+    </h3>
     <br>
     <table class="table table-bordered table-striped" id="productTable">
       <thead>
         <tr>
           <th>Product</th>
-          <th>SubTotal</th>
+          <th>Cost</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -74,7 +77,7 @@
           ...          
         </div>
         <div class="modal-quantity">
-          <input type="number" id="quantity" value="0">
+          <input type="number" id="quantity" value="1">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -157,9 +160,9 @@
     console.log('someFunction received category: ' + comment);
     const quantity = $(".modal-quantity").find('#quantity').val();
     console.log('quantity: ' + quantity);
-    // clear field
+    // reset field
     // . is for html class
-    $(".modal-quantity").find('#quantity').val('');
+    $(".modal-quantity").find('#quantity').val('1');
 
     productsAdd(category, name, cost, comment, quantity);
   }
@@ -180,7 +183,7 @@
     var formattedTotal = Number(runningTotal).toLocaleString('us-US', { style: 'currency', currency: 'USD'});
     console.log(`runningTotal formatted: ${formattedTotal}`);
     //$(".shoppingGrandTotal").text('$' + ((runningTotal*100)/100));
-    $(".shoppingGrandTotal").text(formattedTotal);
+    $(".shoppingGrandTotal").text("Grand Total: "+formattedTotal);
   }
 </script>
 
