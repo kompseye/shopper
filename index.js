@@ -58,9 +58,16 @@ function getProducts() {
   return productsNew;
 }
 
-// about page
+// list
 app.get('/list', (req, res) => {
   res.render('pages/list', {
+    products: getProducts(),
+  });
+});
+
+// list version 2
+app.get('/list2', (req, res) => {
+  res.render('pages/list2', {
     products: getProducts(),
   });
 });

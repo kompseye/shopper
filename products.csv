@@ -7,9 +7,11 @@ Canned,Black Beans,$0.58,Unit
 Canned,Diced Tomato,$0.46,Unit
 Canned,Pineapple,$1.40,Unit
 Canned,Stewed Tomato,$0.46,Unit
+Canned, Canneloni Beans,$0.85,Unit
 Cheese,Kraft Shredded Cheese,$2.28,Unit
 Cheese,Sargento Cheese,$2.48,Unit
 Coffee,Seattles Best,$4.48,Unit
+Coffee,Filters,$3.00,Unit
 Condiment,Heinz Good Ketchup,$2.24,Unit
 Condiment,Pace Salsa,$1.98,Unit
 Condiment,Soy Sauce Lite,$2.18,Unit
@@ -26,6 +28,7 @@ Meat,Chicken Breasts,$8.92,Unit
 Meat,Ground Turkey,$2.99,Per lb
 Meat,Sausage,$5.28,Unit
 Mexican,Mission Flour Tortillas,$2.88,Unit
+Mexican,Tortilla Chips,$2.98,Unit
 Produce,Avocado,$0.98,Unit
 Produce,Bananas,$0.48,Per lb
 Produce,Potatoes,$0.50,Per lb
