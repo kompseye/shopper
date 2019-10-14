@@ -1,0 +1,172 @@
+<!-- Reference: 
+  https://www.w3schools.com/bootstrap/bootstrap_filters.asp 
+  https://www.codemag.com/Article/1511031/CRUD-in-HTML-JavaScript-and-jQuery
+  https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Price List Version 2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Price List Version 2</h2>
+  <input class="form-control" id="myInput" type="text" placeholder="Enter New Product">
+  <br>
+  <h3>
+    <div>
+      <font color="green" class="shoppingGrandTotal">Grand Total: $0.00</font>
+    </div>
+  </h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Product</th>
+        <th>Cost</th>
+        <th>Comment</th>
+        <th>Subtotal</th>
+        <th>Quantity</th>        
+        <th>Delete</th>
+        <!-- <th>Safe Delete</th> -->
+      </tr>
+    </thead>
+    <!-- TODO limit how many rows are displayed -->
+    <tbody id="myTable">
+      <% products.forEach(function(product) { %>
+          <tr id=<%= product.id %> tip="<%= product.name %>">
+            <td id=category><%= product.category %></td>
+            <td id=name><%= product.name %></td>
+            <td id=cost><%= product.cost %></td>
+            <td id=comment><%= product.comment %></td>
+            <td id=subtotal></td>
+            <td id=quantity><input class="form-control" name="quantityFor<%= product.id %>" type="number" value="0"></td>
+            <td id=deleteProduct><button type='button' class='btn btn-default' aria-label='Close' onclick='quickDeleteProduct(this)'><span class='glyphicon glyphicon-trash'/>Quick</button></td>
+            <!-- <td id=deleteProduct><button type='button' class='btn btn-default' aria-label='Close' data-toggle="modal" data-target="#confirm-delete"><span class='glyphicon glyphicon-trash'/>Safe</button></td> -->
+          </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind</button>
+        <button type="button" class="btn btn-primary btn-danger btn-ok" onClick="deleteProduct()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // quick filter
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+
+    // trigger calculateGrandTotal(); on quantity key up
+    $("input[name^='quantityFor'").keypress(function (event) {
+      var key = (event.keyCode ? event.keyCode : event.which);
+      if (key == 13) { // if enter key was pressed
+        // calculate a subtotal given this current row
+        var cost = $(this).parents("tr").find("#cost").text();
+        var quantity = $(this).val();
+        
+        console.log('quantity: ' + quantity);
+        var costAsNumber = cost.split('$')[1];
+        console.log('cost: ' + costAsNumber);
+        var subtotal = (quantity * costAsNumber*100)/100;
+        console.log('subtotal: ' + subtotal);
+        $(this).parents("tr").find("#subtotal").text(subtotal)
+
+        // send that subtotal to the running grand total
+        calculateGrandTotal();
+      }
+    });
+  });
+
+  // delete clicked
+  $('#confirm-delete').on('show.bs.modal', function (event) {
+      $(".modal-body").text('Enter quantity for ' + $(this).attr('tip') + ': '); 
+      var clickFunction = $(".modal-footer").find(".btn-primary").attr('onClick');
+      //console.log(clickFunction);
+      var functionName = clickFunction.substring(0,clickFunction.indexOf("("));
+      //console.log(functionName);
+
+      var itemNumber = $(event.relatedTarget).parents("tr").attr("id");
+      console.log(`item number: ${itemNumber}`);
+      var itemName = $(event.relatedTarget).parents("tr").find("#name").text();
+      console.log(`item name: ${itemName}`);
+
+      // set up the function args
+      $(".modal-footer").find(".btn-primary").attr('onClick', functionName+"("+itemNumber+")");
+      $("#deleteModalLabel").text(`Confirm Delete for "${itemName}"`);
+      
+      // echo out the function args
+      console.log($(".modal-footer").find(".btn-primary").attr('onClick'));
+  });
+
+  // close modal
+  $('.modal-footer > .btn-primary').click(function(event) {
+    $('#confirm-delete').modal('toggle');
+  })
+
+  // quick delete w/o modal
+  function quickDeleteProduct(x) {
+    console.log('deleted: ' + x);
+    $(x).parents("tr").remove();
+    calculateGrandTotal();
+  }
+
+  // safe delete with modal
+  function deleteProduct(x) {
+    $(`#${x}`).remove()
+    console.log('deleted: ' + x);
+    calculateGrandTotal();
+  }
+
+  function calculateGrandTotal() {
+    var runningTotal = 0;
+    $("#myTable").children().find('#subtotal').each(function (index) {
+      console.log(index + ": " + $(this).text());
+      runningTotal = runningTotal + ($(this).text()*100)/100;
+    });
+    runningTotal = runningTotal + ($(this).text()*100)/100;
+    var formattedTotal = Number(runningTotal).toLocaleString('us-US', { style: 'currency', currency: 'USD'});    
+    console.log(`runningTotal formatted: ${formattedTotal}`);
+
+    // var previousGrandTotal = $(".shoppingGrandTotal").text();
+    // if (previousGrandTotal.length > 0) {
+    //   var previousGrandTotalAsNumber = (previousGrandTotal * 100)/100;
+    //   previousGrandTotal = previousGrandTotalAsNumber + subtotal;
+    //   $(".shoppingGrandTotal").text("");
+    //   $(".shoppingGrandTotal").text(previousGrandTotal);
+    // } else {
+    //   $(".shoppingGrandTotal").text(subtotal);  
+    // }
+    $(".shoppingGrandTotal").text("Grand Total: "+formattedTotal);
+  }
+</script>
+
+</body>
+</html>
+
