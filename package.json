@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint *.js ",
     "format": "prettier --write *.js",
-    "start": "nodemon --delay 500ms -e csv,js,mjs,json,ejs index.js"
+    "start": "nodemon --delay 500ms -e css,csv,js,mjs,json,ejs index.js"
   },
   "repository": {
     "type": "git",

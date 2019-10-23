@@ -3,6 +3,7 @@ const fs = require('fs');
 
 // our express application (server)
 const app = express();
+app.use(express.static(__dirname + '/'));
 
 // groceries are the products
 const productsNew = [];

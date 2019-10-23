@@ -10,6 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="my.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
@@ -22,6 +23,9 @@
   <h3>
     <div>
       <font color="green" class="shoppingGrandTotal">Grand Total: $0.00</font>
+    </div>
+    <div>
+      <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-shopping-cart' onclick='deleteAllRowsWithQuantityZero(this)'/> Finalize</button>
     </div>
   </h3>
   <table class="table table-bordered table-striped">
@@ -46,7 +50,7 @@
             <td id=cost><%= product.cost %></td>
             <td id=comment><%= product.comment %></td>
             <td id=subtotal></td>
-            <td id=quantity><input class="form-control" name="quantityFor<%= product.id %>" type="number" value="0"></td>
+            <td class=quantity><input class="form-control" name="quantityFor<%= product.id %>" type="number" value="0"></td>
             <td id=deleteProduct><button type='button' class='btn btn-default' aria-label='Close' onclick='quickDeleteProduct(this)'><span class='glyphicon glyphicon-trash'/>Quick</button></td>
             <!-- <td id=deleteProduct><button type='button' class='btn btn-default' aria-label='Close' data-toggle="modal" data-target="#confirm-delete"><span class='glyphicon glyphicon-trash'/>Safe</button></td> -->
           </tr>
@@ -144,6 +148,14 @@
     calculateGrandTotal();
   }
 
+  // delete all rows with quantity of 0
+  function deleteAllRowsWithQuantityZero(x) {
+    $("#myTable").children().find("input[name^='quantityFor'").each(function (index) {
+      //$(index).parents("tr").remove();
+      $($("#myTable").children().find("input[name^='quantityFor'")[index]).parents("tr").remove();
+    });
+  }
+
   function calculateGrandTotal() {
     var runningTotal = 0;
     $("#myTable").children().find('#subtotal').each(function (index) {
@@ -165,6 +177,15 @@
     // }
     $(".shoppingGrandTotal").text("Grand Total: "+formattedTotal);
   }
+
+  // enter key to go to next row, same column
+  $(".quantity").keypress(function(event) {
+    console.log(this);
+    if (event.which == 13) {
+      $(this).closest('tr').next().find("input[name^='quantityFor'").focus();
+    }
+
+  });
 </script>
 
 </body>
