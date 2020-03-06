@@ -100,6 +100,7 @@
         console.log('cost: ' + costAsNumber);
         var subtotal = (quantity * costAsNumber*100)/100;
         console.log('subtotal: ' + subtotal);
+        if (subtotal === 0) subtotal = '0.000'
         $(this).parents("tr").find("#subtotal").text(subtotal)
 
         // send that subtotal to the running grand total
@@ -151,8 +152,9 @@
   // delete all rows with quantity of 0
   function deleteAllRowsWithQuantityZero(x) {
     $("#myTable").children().find("input[name^='quantityFor'").each(function (index) {
-      //$(index).parents("tr").remove();
-      $($("#myTable").children().find("input[name^='quantityFor'")[index]).parents("tr").remove();
+      if ($($(this)).val() === '0') {
+        $($(this)).parents("tr").remove();
+      }
     });
   }
 
@@ -160,6 +162,9 @@
     var runningTotal = 0;
     $("#myTable").children().find('#subtotal').each(function (index) {
       console.log(index + ": " + $(this).text());
+      if ($(this).text() === '') {
+        $(this).text('0.000');
+      }
       runningTotal = runningTotal + ($(this).text()*100)/100;
     });
     runningTotal = runningTotal + ($(this).text()*100)/100;
