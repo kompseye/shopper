@@ -1,9 +1,10 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 
 // our express application (server)
 const app = express();
-app.use(express.static(__dirname + '/'));
+app.use(express.static(path.join(__dirname, '/')));
 
 // groceries are the products
 const productsNew = [];
@@ -13,11 +14,6 @@ let productCtr = 1;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-
-// index page
-app.get('/', (req, res) => {
-  res.render('pages/index');
-});
 
 /**
  * Helper function to import the values of the CSV.
@@ -59,16 +55,9 @@ function getProducts() {
   return productsNew;
 }
 
-// list
-app.get('/list', (req, res) => {
-  res.render('pages/list', {
-    products: getProducts(),
-  });
-});
-
-// list version 2
-app.get('/list2', (req, res) => {
-  res.render('pages/list2', {
+// index page
+app.get('/', (req, res) => {
+  res.render('pages/index', {
     products: getProducts(),
   });
 });
