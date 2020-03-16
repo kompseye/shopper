@@ -1,6 +1,8 @@
 # shopper
 Attention all shoppers: build your grocery list! I built this application to help with our grocery budget. My goal was to build a simple interface that resembles a spreadsheet. 
 
+![Shopper](demo/shopper.png)
+
 # How to Run
 
 ## Run the Web UI
