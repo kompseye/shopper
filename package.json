@@ -14,7 +14,7 @@
     "url": "git+https://github.com/kompseye/shopper.git"
   },
   "author": "kompseye",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/kompseye/shopper/issues"
   },
