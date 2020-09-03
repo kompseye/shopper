@@ -1,11 +1,12 @@
-Produce,Gala Apples,$1.50,Per lb
+Produce,Gala Apples 3lb Bag,$1.98,Unit
 Produce,Nectarines,$1.28,Per lb
-Produce,Red Apples,$0.98,Per lb
+Produce,Red Apples 5lb Bag,$2.28,Unit
 Produce,Red Grapes,$1.98,Per lb
 Produce,Honey Mustard Yogurt Dressing,$3.78,Unit
 Produce,Petite Carrots,$1.58,Unit
+Produce, Asparagus, $3.00, Unit
 Produce,Salad Spring Mix - Box,$3.48,Unit
-Produce,Salad Sweet Kale Mix,$3.48,Unit
+Produce,Salad Sweet Kale Mix - Big Bag,$4.98,Unit
 Produce,Salad Spring Mix,$1.98,Unit
 Produce,Spinach,$1.98,Unit
 Produce,Romaine Lettuce,$1.98,Unit
@@ -20,13 +21,17 @@ Produce,Bananas,$0.48,Per lb
 Produce,Strawberries,$2.50,Unit
 Produce,Avocado,$0.98,Unit
 Produce,Roma Tomato,$0.98,Per lb
+Produce,Lemon,$0.58,Per Unit
 Produce,Onion,$.50,Per lb
 Produce,Sweet Potatoes,$1.48,Per lb
+Produce,Pesto Sauce,$3.00,Per lb
+Produce,Basil,$1.48,Per lb
 Produce,Ginger,$1.48,Per lb
 Produce,Russett Potatoes,$.50,Per lb
 Produce,Snow Peas,$2.00,Per lb
 Produce,Butter Lettuce,$3.00,Per lb
 Bulk,Craisins,$2.85,Per lb
+Bulk,Mariana Cranberries,$5.97,Unit
 Bulk,Raisins,$2.73,Per lb
 Bulk,Golden Raisins,$2.73,Per lb
 Bulk,Dried Pineapple,$2.73,Per lb
@@ -39,21 +44,28 @@ Condiments,Mayonaisse,$3.00,Unit
 Condiments,Distilled Vinegar,$2.00,Unit
 Condiments,Rice Vinegar,$1.31,Unit
 Condiments,Caesar Dressing,$1.50,Unit
+Condiments,Italian Dressin,$1.50,Unit
+Condiments, Kraft Greek Vinagrette,$1.50,Unit
 Meat,Country Style Ribs,$9.50,Unit
 Meat,Flank Steak,$4.00,lb
 Meat,Chicken Breasts,$8.92,Unit
 Meat,Ground Turkey,$2.99,Per lb
 Meat,Sausage,$5.28,Unit
 Meat,Diced Ham,$2.68,Unit
-Cheese,Kraft Shredded Cheese,$2.28,Unit
-Cheese,Sargento Cheese Colby Jack slices,$2.48,Unit
+Meat,Bacon,$6.00,Unit
+Meat,Chicken Thighs,$2.00,Unit
+Cheese,Kraft Shredded Cheese Colby,$2.28,Unit
+Cheese,Kraft Parmasen Cheese,$2.28,Unit
+Cheese,Sargento Cheese Colby Jack thin slices,$2.48,Unit
 Cheese,String Cheese,$3.98,Unit
+Cheese,Tillamook Block of Colby Jack Cheese,$5.00,Unit 
 Baked Goods, Pillsbury Cake,$1.28,Unit
 Baked Goods, Unsweetened Chocolate,$3.00,Unit
 Baked Goods, Frosting,$1.98,Unit
 Baked Goods, Syrup,$13.00,Unit
 Baked Goods, Pancake Mix,$6.00,Unit
 Baked Goods, Brown Sugar,$1.88,Unit
+Baked Goods, White Sugar,$2.67,Unit
 Asian,Soy Sauce Lite,$2.18,Unit
 Asian, Fried Rice Packet,$1.00,Unit
 Asian,Thai Rice Noodles,$3.50,Unit
@@ -80,6 +92,7 @@ Pasta,Ziti,$1.88,Unit
 Pasta, Jumbo Stuffed Shells, $3.00
 Pasta,Ditalini Pasta,$1.88,Unit
 Pasta,Rotini Noodles,$1.88,Unit
+Pasta,Linguine,$1.88,Unit
 Mexican,Mission Flour Tortillas,$2.88,Unit
 Mexican,Fajita Seasoning,$1.12,Unit
 Mexican,Taco Seasoning,$1.12,Unit
@@ -90,12 +103,12 @@ Mexican,Diced Chilis,$1.30,Unit
 Paper Goods,Sandwich Bags - 90 Count,$1.98,Unit
 Paper Goods,Napkins,$1.98,Unit
 Dairy,Activia Yogurt,$5.38,Unit
-Dairy,Shredded Colby Cheese,$3.00,Unit
-Dairy, Block of Colby Jack Cheese,$5.00,Unit 
 Dairy,Darigold Butter,$3.57,Unit
 Dairy,Eggs - 18,$1.78,Unit
 Dairy,Creamer,$5.50,Unit
-Dairy,Whole Milk,$3.58,Unit
+Dairy,Darigold Cottage Cheese,$4.00,Unit
+Dairy,Fairlife Whole Milk,$3.18,Unit
+Dairy,Fairlife Chocolate Milk,$3.18,Unit
 Dairy,Almond Milk,$3.00,Unit
 Frozen,Blueberries,$2.50,Unit
 Frozen,Cool Whip,$.88,Unit
@@ -103,6 +116,7 @@ Frozen,Raspberries,$2.50,Unit
 Frozen,Broccoli,$1.50,Unit
 Frozen,Corn,$1.50,Unit
 Frozen,Sherbert,$2.68,Unit
+Frozen,Pizza,$5.06,Unit
 Sandwich,Skippy PB,$4.68,Unit
 Sandwich,Smucker Jelly,$2.88,Unit
 Sandwich,Winco Honey,$2.88,Unit
@@ -111,6 +125,7 @@ Snack,Ritz,$2.68,Unit
 Snack,Rice Cakes,$2.40,Unit
 Snack,Trident Gum,$0.98,Unit
 Snack,Graham Crackers,$2.00,Unit
+Chocolate,Lindt Truffle,$3.84 Unit
 Toiletries,Hand Soap,$0.88,Unit
 Toiletries,Flossers,$1.83,Unit
 Toiletries,Conditioner,$3.59,Unit
@@ -128,3 +143,6 @@ Bread,Hot Dog Buns,$1.98,Unit
 Bread,Naked Honey Wheat,$2.18,Unit
 Bread,60cal bread,$3.58,Unit
 Bread,Hoagies,$3.00,Unit
+Home,Salt Pellets,$5.00,Unit
+Home,Stamps,$10.00,Unit
+Home,Dishwasher Rinse Aid,$6.00,Unit
