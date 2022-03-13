@@ -33,7 +33,8 @@
   </h3>
   <h3>
     <div>
-      <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-shopping-cart' onclick='deleteAllRowsWithQuantityZero(this)'/> Finalize</button>
+      <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-equalizer' onclick='toggleAllRowsWithQuantityZero(this)'/> Toggle Empty Rows</button>      
+      <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-plus' onclick='addRow(this)'/> Add Row</button>
     </div>
   </h3>
   <h3>
@@ -160,13 +161,27 @@
     calculateGrandTotal();
   }
 
-  // delete all rows with quantity of 0
-  function deleteAllRowsWithQuantityZero(x) {
+  // toggle all rows with quantity of 0
+  function toggleAllRowsWithQuantityZero(x) {
     $("#myTable").children().find("input[name^='quantityFor'").each(function (index) {
       if ($($(this)).val() === '0') {
-        $($(this)).parents("tr").remove();
+        $($(this)).parents("tr").toggle();
       }
     });
+  }
+
+  function addRow(x) {
+    $("#myTable tr:last").after('\
+    <tr id=adhoc tip="added adhoc"> \
+            <td id=category></td> \
+            <td id=name><input class="form-control" type="text"></td> \
+            <td id=cost><input class="form-control" type="text"></td> \
+            <td id=comment></td> \
+            <td id=subtotal></td> \
+            <td class=quantity><input class="form-control" name="quantityForAdhoc" type="number" value="0"></td> \
+            <td id=deleteProduct><button type="button" class="btn btn-default" aria-label="Close" onclick="quickDeleteProduct(this)"><span class="glyphicon glyphicon-trash"/>Quick</button></td> \
+          </tr> \
+    ');
   }
 
   function calculateGrandTotal() {
