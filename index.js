@@ -64,3 +64,7 @@ app.get('/', (req, res) => {
 
 // app/server listens on port 8080
 app.listen(8080);
+
+console.log();
+console.log('Shopper App is ready!! Goto URL http://localhost:8080 (Hint: Command+Click the link)');
+console.log();

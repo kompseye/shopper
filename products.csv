@@ -23,6 +23,8 @@ Produce,Avocado 6ct bag,$3.98,Unit
 Produce,Roma Tomato,$0.98,Per lb
 Produce,On the vine Tomato,$1.28,Per lb
 Produce,Lemon,$0.58,Per Unit
+Produce,Lemon Juice,$1.58,Per Unit
+Produce,Lime,$1.60,Per Unit
 Produce,Lemon Large,$0.78,Per Unit
 Produce,Lime,$0.50,Per Unit
 Produce,Onion,$0.98,Per lb
@@ -41,7 +43,9 @@ Bulk,Dried Pineapple,$2.73,Per lb
 Bulk,Jasmine Rice,$0.89,Per lb
 Bulk,Oatmeal,$0.61,Per lb
 Bulk,Cashews,$4.00,Per lb
+Bulk,Almonds,$4.00,Per lb
 Condiments,Croutons,$1.66,Unit
+Condiments,Bolthouse Farms Basalmic Vingeratte,$1.66,Unit
 Condiments,Heinz No Sugar Added Ketchup,$2.24,Unit
 Condiments,Best Foods Mayonaisse 30oz,$4.48,Unit
 Condiments,Distilled Vinegar,$2.00,Unit
@@ -63,6 +67,8 @@ Cheese,Sargento Cheese Colby Jack thin slices,$2.88,Unit
 Cheese,String Cheese,$3.98,Unit
 Cheese,Tillamook Block of Colby Jack Cheese,$5.00,Unit 
 Baked Goods,Baking Soda,$.93,Unit
+Baked Goods,Olive Oil,$6.93,Unit
+Baked Goods,Corn Starch,$1.50,Unit
 Baked Goods,Pillsbury Cake,$1.28,Unit
 Baked Goods,Unsweetened Chocolate,$3.00,Unit
 Baked Goods,Sunmaid Golden Raisins 15oz,$3.74,Unit
@@ -77,12 +83,15 @@ Baked Goods,Krusteaz Triple Chocolate Chunk,$1.97,Unit
 Baked Goods,Krusteaz Cinnamon Swirl Cake,$2.14,Unit
 Baked Goods,Bob's Mill Flaxseed,$2.77,Unit
 Baked Goods,Watkins Organic Cinnamon,$3.00,Unit
+Baked Goods,Garlic Powder,$1.25,Unit
 Asian,Soy Sauce Lite,$2.18,Unit
 Asian,Fried Rice Packet,$1.00,Unit
 Asian,Thai Rice Noodles,$3.50,Unit
 Asian,Vermicelli Noodles,$2.30,Unit
 Asian,Panda Express Mandarin Sauce,$3.50,Unit
+Seasoning,Taco Seasoning Packet,$1.50,Unit
 Canned,Black Beans,$0.58,Unit
+Canned,Corn,$0.58,Unit
 Canned,Dark Red Kidney Beans,$0.58,Unit
 Canned, Canneloni Beans,$0.85,Unit
 Canned,Diced Tomato,$0.46,Unit
@@ -91,9 +100,11 @@ Canned,Winco Unsalted Tomato Sauce 8oz,$0.72,Unit
 Canned,Water Chestnuts,$1.50,Unit
 Canned,Swanson Chicken Broth,$1.98,Unit
 Canned,Swanson Beef Broth,$1.98,Unit
+Canned, Mandarin Oranges, $1.50, Unit
 Canned,Pineapple,$1.40,Unit
 Cereal Aisle,Nature Valley Granola Bar Cashew,$2.28,Unit
 Cereal Aisle,Nature Valley Granola Bar,$2.28,Unit
+Cereal Aisle,Life,$3.00,Unit
 Cereal Aisle,Honey Nut Cheerios,$2.28,Unit
 Cereal Aisle,French Vanilla Pudding,$1.50,Unit
 Coffee,Seattles Best,$5.48,Unit
@@ -117,6 +128,8 @@ Mexican,Pace Salsa,$1.98,Unit
 Mexican,Diced Chilis,$1.30,Unit
 Paper Goods,Winco Sandwich Bags - 90 Count,$2.24,Unit
 Paper Goods,Napkins,$1.98,Unit
+Paper Goods,Plastic Tablecloth,$1.98,Unit
+Baby, Diapers, $30.00, Unit
 Dairy,Activia Yogurt,$5.38,Unit
 Dairy,Darigold Unsalted Butter,$3.48,Unit
 Dairy,Eggs 18 ct,$2.65,Unit
@@ -125,12 +138,16 @@ Dairy,Darigold Cottage Cheese,$4.00,Unit
 Dairy,Fairlife Whole Milk,$3.48,Unit
 Dairy,Fairlife Chocolate Milk,$3.18,Unit
 Dairy,Almond Milk,$4.12,Unit
+Dairy,1/3 Less Cream Cheese,$4.12,Unit
+Dairy,0% Greek Yogurt,$2.12,Unit
 Frozen,Blueberries,$2.50,Unit
 Frozen,Cool Whip,$.88,Unit
 Frozen,Raspberries,$2.50,Unit
 Frozen,Broccoli,$1.50,Unit
 Frozen,Corn,$1.50,Unit
 Frozen,Sherbert,$2.68,Unit
+Frozen,Ice Cream,$4.68,Unit
+Frozen,Ice Cream Toppings,$4.68,Unit
 Frozen,Pizza,$5.30,Unit
 Frozen,Oreida Sweet Potatoe Fries,$3.35,Unit
 Sandwich,Skippy Natural PB 40oz,$4.98,Unit
@@ -158,7 +175,10 @@ Bread,Hamburger Buns,$1.98,Unit
 Bread,Hot Dog Buns,$1.98,Unit
 Bread,Country Potato Bread,$2.98,Unit
 Bread,60cal bread,$3.58,Unit
+Bread,Naan Bread,$4.00,Unit
 Bread,Hoagies,$3.00,Unit
+Bread,Rolls,$3.00,Unit
+Bread,Flatbread,$3.00,Unit
 Home,Suresoft Salt Pellets,$4.64,Unit
 Home,Stamps,$10.00,Unit
 Home,Dishwasher Rinse Aid,$6.00,Unit
